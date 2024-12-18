@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'auth',
     'billapp',
     'django.contrib.admin',
     'django.contrib.auth',
