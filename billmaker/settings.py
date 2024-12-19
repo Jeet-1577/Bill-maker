@@ -116,6 +116,17 @@ USE_I18N = True
 USE_TZ = True
 
 
+#sending emails added by user
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'jeet_22022@ldrp.ac.in'
+EMAIL_HOST_PASSWORD = 'Chqu xrvz vnuwtvwx'  # Your 16-character app password
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True  # Correct boolean format
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
