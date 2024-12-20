@@ -27,17 +27,17 @@ def signup(request):
                 # return HttpResponse("Email already exit")
                 # messages.warning(request,"Email is Taken")
         
-        except User.DoesNotExist:
+        except Exception as identifier:
             pass
 # Change this line: 
 
 
-        user = User.objects.create(username=email, email=email)
-        user.set_password(password)        
+        user = User.objects.create_user(email,email, password)
+        # user.set_password(password)        
         user.is_active=False
         user.save()
-        email_subject="Activate your Account"
-        messages=render_to_string('activate.html',{
+        
+        message=render_to_string('activate.html',{
             'user':user,
 #-----------------------------When hosting website change dominname-------------------------------------------------------------
             'domain' : '127.0.0.1:8000',
@@ -48,18 +48,11 @@ def signup(request):
        
     # sendin email with content
 
-        message = '''           Project Name : Bill-Maker
-            Seminar-Topic : Cloud Computing
-
-    Description :  The Hotel Billing System is a web-based application designed for small businesses such as stores, food stalls, small hotels, and cafes. The primary goal is to streamline and simplify the billing process by providing an intuitive, user-friendly interface that integrates seamlessly with small thermal printers for instant bill printing.
-This project aims to provide an affordable, efficient, and lightweight solution tailored to the needs of small business owners.
-provide features like Invoice Generation, Printer Integration, Inventory Management, Sales Reports, Data Storage, GST/Tax Support and many more
-
-    Technology : Front-End :- HTML, CSS , JS, REACT 
-            Back-End : Python(Django)'''
-        email_subject =' 6th sem-Project'
+        # message = ''' hii this is massage of email'''
+        email_subject =' this is mail of accouunt activation'
         email_message = EmailMessage(email_subject,message,settings.EMAIL_HOST_USER,[email])
         email_message.send()
+        messages.success(request,"Activate Your Account by clicking  the link in your gmail")
         return redirect('/auth/login/')
     return render(request, "signup.html")
     # return HttpResponse("User created", email)
