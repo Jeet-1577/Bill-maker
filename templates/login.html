@@ -2,8 +2,22 @@
 {% block title %}Login{% endblock title %}
  {% block content %}
     
-    <div class="card bg-light p-5 w-40">
+    <div class="card bg-light p-5 w-40 rounded  mb-5 bg-light mt-5" style="box-shadow: 0px 4px 8px rgba(10, 10, 10, 0.5);">
 
+      {% for message in messages %}
+      <div
+        class="alert alert-{{message.tags}} alert-dismissible fade show"
+        role="alert"
+      >
+        <strong>{{message}}</strong>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
+      </div>
+      {% endfor %}
     
       <h1 class="text-dark">login</h1>
     
@@ -32,7 +46,7 @@
           />
         </div>
     
-        <button type="submit" class="btn btn-dark">LogIn</button>
+        <button type="submit" class="btn btn-dark mt-3 mb-3">LogIn</button>
     
         <br />
         New User? <a href="/auth/signup/">signup</a>

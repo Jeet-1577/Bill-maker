@@ -3,10 +3,10 @@
 
 {% block content %}
 
-<div class="card bg-light p-5 w-40 ">
+<div class="card bg-light p-5 w-40 rounded-lg bg-light mt-5" style="max-height : 500px; box-shadow: 0px 4px 8px rgba(10, 10, 10, 0.5);"">
   {% for message in messages %}
   <div
-    class="alert alert-{{message.tags}} alert-dismissible fade show"
+    class="alert alert-{{message.tags}} alert-dismissible fade show shadow-lg p-2 mb-2 mt-0"
     role="alert"
   >
     <strong>{{message}}</strong>
@@ -56,11 +56,10 @@
       />
     </div>
 
-    <button type="submit" class="btn btn-dark">SignIn</button>
+    <button type="submit" class="btn btn-dark mt-3 mb-2">SignIn</button>
 
     <br />
     Already User? <a href="/auth/login/">Login</a>
-
     <br />
   </form>
 </div>

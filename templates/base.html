@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>
+  <title> 
     {% block title %}{% endblock title %}
   </title>
   <meta name="description" content="Invoince generator Website to generat Bills">
@@ -41,49 +41,52 @@
 
       <a href="/" class="logo ">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="{% static '/assets/img/logo1.png ' %}" class="rounded-circle " alt="">Bill-Maker
+        <img src="{% static '/assets/img/1.png ' %}" class="rounded-pill"  alt="">
 
       </a>
 
-      <nav id="navmenu" class="navmenu">
+      <nav id="navmenu" class="navmenu ">
         <ul>
-          <li><a class="nav-link Scrollto"  href="/" class="active">Home</a></li>
-          <li><a class="nav-link Scrollto"  href="/about">About</a></li>
-          <li><a class="nav-link Scrollto"  href="/services">Services</a></li>
-          <li><a class="nav-link Scrollto" href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link Scrollto" href="/profile">My Profile</a></li>
-          {% comment %} <li><a href="#team">Team</a></li> {% endcomment %}
-          <li><a class="nav-link Scrollto" href="/blog">Blog</a></li>
+          <li><a class="nav-link Scrollto text-danger"  href="/" class="active">Home</a></li>
+          <li><a class="nav-link Scrollto text-danger"  href="/about">About</a></li>
+          <li><a class="nav-link Scrollto text-danger"  href="/services">Services</a></li>
+          <li><a class="nav-link Scrollto text-danger" href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link Scrollto text-danger"  href="/Checkout">Checkout</a></li>
+          <li><a class="nav-link Scrollto text-danger" href="/profile">My Profile</a></li>
+          <!-- {% comment %} <li><a  class="nav-link Scrollto bg-danger p-3 m-2" href="/cart">Cart</a></li> {% endcomment %} -->
+          <!-- <button type="button" class="nav-link Scrollto bg-danger p-3 m-2 text-white idpopcart" data-container= "body" data-toggle="popover" data-placement="bottom" data-html="true"> Cart (<span id="cart">0</span>)</button> -->
+          <!-- {% comment %} <li><a href="#team">Team</a></li> {% endcomment %} -->
+          <!-- {% comment %} <li><a class="nav-link Scrollto" href="/blog">Blog</a></li> {% endcomment %} -->
 
           {% if request.user.is_authenticated %}
           
-          <li><a class="nav-link Scrollto" href="/auth/logout">Logout </a></li>
+          
+          <li><a class="nav-link Scrollto text-danger text-danger" href="/auth/logout">Logout </a></li>
           
           {% else %} 
          
-          <li class="dropdown"><a href="#"><span>Sign-In</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
+          <li class="dropdown" shadow-lg p-3 mb-5 bg-light><a href="#" class="text-danger"><span>Sign-In</span> <i class="bi bi-chevron-down toggle-dropdown ""></i></a>
+            <ul style="box-shadow: 0px 4px 8px rgba(7, 7, 7, 0.5);">
               <li><a href="/auth/signup/">Sign-Up</a></li>
-              <li><a href="/auth/login">Login</a></li>
+              <li><a href="/auth/login" >Login</a></li>
           </li>
-          {% comment %} <li><a href="#">Dropdown 4</a></li> {% endcomment %}
+          <!-- {% comment %} <li><a href="#">Dropdown 4</a></li> {% endcomment %} -->
         </ul>
       </li>
           {% endif %}
 
 
            
-              {% comment %} <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a> {% endcomment %}
-                {% comment %} <ul>
+              <!-- {% comment %} <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a> {% endcomment %} -->
+                <!-- {% comment %} <ul>
                   <li><a href="#">Deep Dropdown 1</a></li>
                   <li><a href="#">Deep Dropdown 2</a></li>
                   <li><a href="#">Deep Dropdown 3</a></li>
                   <li><a href="#">Deep Dropdown 4</a></li>
                   <li><a href="#">Deep Dropdown 5</a></li>
                 </ul> {% endcomment %}
-             
-          <li><a class="nav-link Scrollto bg-danger p-3 m-2" href="/cart">Cart</a></li>
-          <li><a class="nav-link Scrollto bg-dark p-3 m-2" href="/contact">Contact</a></li>
+              -->
+          <li><a class="nav-link Scrollto bg-dark p-3 m-2 rounded-pill w-50px" href="/contact">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -94,9 +97,9 @@
   
   <!-- Hero Section -->
   <main class="main">
-  <section id="hero" class="hero section dark-background position-relative">
+  <section id="hero" class="hero section  position-relative">
 
-      <img src="{% static '/assets/img/hero-bg2.png' %} " class="img-fluid" alt="background image" data-aos="fade-in">
+      <img src="{% static '/assets/img/hero-bg2.png' %} " class="img-fluid dark-background" alt="background image" data-aos="fade-in">
 
   
       <div class="container text-center position-absolute" data-aos="fade-up" data-aos-delay="100">
@@ -183,7 +186,7 @@
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
-  <div id="preloader"></div>
+  <!-- <div id="preloader"></div> -->
 
   <!-- Vendor JS Files -->
   <script src="{% static '/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
